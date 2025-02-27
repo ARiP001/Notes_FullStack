@@ -1,6 +1,7 @@
 import Note from  "../models/NoteModel.js";
 import { Op } from "sequelize";
 
+//halo
 //get all (done)
 export const getNotes = async (req,res) => {
     try {
