@@ -27,11 +27,11 @@ const DetailNote = () => {
     <div className="container mt-5">
       <h1 className="title">Note Details</h1>
       <div className="box">
-        <p><strong>ID:</strong> {note.id}</p>
-        <p><strong>Owner:</strong> {note.owner}</p>
-        <p><strong>Title:</strong> {note.title}</p>
-        <p><strong>Detail:</strong> {note.detail}</p>
-        <p><strong>Tag:</strong> {note.tag}</p>
+        <p><strong>ID     :</strong> {note.id}</p>
+        <p><strong>Owner  :</strong> {note.owner}</p>
+        <p><strong>Title  :</strong> {note.title}</p>
+        <p><strong>Detail :</strong> {note.detail}</p>
+        <p><strong>Tag    :</strong> {note.tag}</p>
       </div>
       <Link to="/" className="button is-primary">Back to Notes</Link>
     </div>

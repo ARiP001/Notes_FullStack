@@ -14,9 +14,6 @@ function App() {
         <Route path="detail/:id" element={<DetailNote/>}/>
       </Routes>
     </BrowserRouter>
-    // <div>
-    //   <h1>Lorem</h1>
-    // </div>
   );
 }
 
