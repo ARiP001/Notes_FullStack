@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize('notes_arif','root','', {
-    host:'34.46.79.48',
+const db = new Sequelize('notes-arif','root','RiATHgaming*$99', {
+    host:'34.128.89.90',
     dialect:'mysql'
 })
 
