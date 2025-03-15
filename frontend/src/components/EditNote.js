@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import api from "../api/api";
 
 const EditNote = () => {
   const [owner, setOwner] = useState("");
@@ -17,7 +18,7 @@ const EditNote = () => {
   const updateNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://34.128.89.90:7000/notes/${id}`, {
+      await api.patch(`/notes/${id}`, {
         owner,
         title,
         detail,
@@ -31,7 +32,7 @@ const EditNote = () => {
 
   const getNoteById = async () => {
     try {
-      const response = await axios.get(`http://34.128.89.90:7000/notes/${id}`);
+      const response = await api.get(`/notes/${id}`);
       setOwner(response.data.owner);
       setTitle(response.data.title);
       setDetail(response.data.detail);

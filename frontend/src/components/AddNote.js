@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../api/api";
 
 const AddNote = () => {
   const [owner, setOwner] = useState("");
@@ -12,7 +13,7 @@ const AddNote = () => {
   const saveNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://34.128.89.90:7000/notes", {
+      await api.post("/notes", {
         owner,
         title,
         detail,

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import api from "../api/api";
 
 const DetailNote = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const DetailNote = () => {
 
   const getNoteById = async () => {
     try {
-      const response = await axios.get(`http://34.128.89.90:7000/notes/${id}`);
+      const response = await api.get(`/notes/${id}`);
       setNote(response.data);
     } catch (error) {
       console.error("Error fetching note details:", error);

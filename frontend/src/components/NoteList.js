@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import api from "../api/api";
 
 const NoteList = () => {
   const [notes, setNotes] = useState([]);
@@ -12,7 +13,7 @@ const NoteList = () => {
 
   const getNotes = async () => {
     try {
-      const response = await axios.get("http://34.128.89.90:7000/notes");
+      const response = await api.get("/notes");
       setNotes(response.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
@@ -25,13 +26,26 @@ const NoteList = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://34.128.89.90:7000/notes/search/${searchOwner}`);
+      const response = await api.get(`/notes/search/${searchOwner}`);
       setNotes(response.data);
     } catch (error) {
       console.error("Error searching notes:", error);
       setNotes([]); // Clear results if no matches found
     }
   };
+
+  const deleteNote = async (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this note?");
+    if (!confirmDelete) return;
+  
+    try {
+      await axios.delete(`http://localhost:7000/notes/${id}`); // Change to your backend IP
+      setNotes(notes.filter((note) => note.id !== id)); // Remove deleted note from UI
+    } catch (error) {
+      console.error("Error deleting note:", error);
+    }
+  };
+  
 
   return (
     <div className="columns mt-5 is-centered">
