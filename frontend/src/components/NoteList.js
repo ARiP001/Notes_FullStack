@@ -12,7 +12,7 @@ const NoteList = () => {
 
   const getNotes = async () => {
     try {
-      const response = await axios.get("http://localhost:7000/notes");
+      const response = await axios.get("http://34.128.89.90:7000/notes");
       setNotes(response.data);
     } catch (error) {
       console.error("Error fetching notes:", error);
@@ -25,7 +25,7 @@ const NoteList = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:7000/notes/search/${searchOwner}`);
+      const response = await axios.get(`http://34.128.89.90:7000/notes/search/${searchOwner}`);
       setNotes(response.data);
     } catch (error) {
       console.error("Error searching notes:", error);

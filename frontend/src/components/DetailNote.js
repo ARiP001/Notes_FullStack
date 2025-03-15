@@ -12,7 +12,7 @@ const DetailNote = () => {
 
   const getNoteById = async () => {
     try {
-      const response = await axios.get(`http://localhost:7000/notes/${id}`);
+      const response = await axios.get(`http://34.128.89.90:7000/notes/${id}`);
       setNote(response.data);
     } catch (error) {
       console.error("Error fetching note details:", error);

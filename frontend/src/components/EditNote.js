@@ -17,7 +17,7 @@ const EditNote = () => {
   const updateNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:7000/notes/${id}`, {
+      await axios.patch(`http://34.128.89.90:7000/notes/${id}`, {
         owner,
         title,
         detail,
@@ -31,7 +31,7 @@ const EditNote = () => {
 
   const getNoteById = async () => {
     try {
-      const response = await axios.get(`http://localhost:7000/notes/${id}`);
+      const response = await axios.get(`http://34.128.89.90:7000/notes/${id}`);
       setOwner(response.data.owner);
       setTitle(response.data.title);
       setDetail(response.data.detail);
