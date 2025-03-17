@@ -7,6 +7,6 @@ app.use(cors());
 app.use(express.json());
 app.use(NoteRoutes);
 
-app.listen(7000, ()=>{
-    console.log('Menyala abankuh di port 7000...')
+app.listen(7000, "0.0.0.0", () => {
+    console.log("Server running on port 7000 and accessible externally");
 });
