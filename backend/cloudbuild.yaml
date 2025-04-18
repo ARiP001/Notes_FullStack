@@ -5,10 +5,10 @@ steps:
     args:
       - "build"
       - "-f"
-      - "backend/Dockerfile"  # Specify the path to the Dockerfile
+      - "Dockerfile"  # Use the Dockerfile in the backend folder
       - "-t"
       - "gcr.io/$PROJECT_ID/tcc-be"
-      - "backend"  # Set the build context to the backend folder
+      - "."  # Use the current directory (backend folder) as the build context
 
   # Meng-upload/push image yg telah dibuat ke Artifact Registry
   # Pada bagian ini, dijalankan perintah "docker push 'gcr.io/$PROJECT_ID/tcc-be'"
