@@ -3,12 +3,12 @@ steps:
   # Project ID akan secara otomatis terisi ketika melakukan deploy di project yg dipilih
   - name: "gcr.io/cloud-builders/docker"
     args:
-      - "build"
-      - "-f"
-      - "Dockerfile"  # Use the Dockerfile in the backend folder
-      - "-t"
-      - "gcr.io/$PROJECT_ID/tcc-be"
-      - "."  # Use the current directory (backend folder) as the build context
+       - "build"
+       - "-f"
+       - "backend/Dockerfile"  # Specify the path to the Dockerfile
+       - "-t"
+       - "gcr.io/$PROJECT_ID/tcc-be"
+       - "backend"  # Set the build context to the backend folder
 
   # Meng-upload/push image yg telah dibuat ke Artifact Registry
   # Pada bagian ini, dijalankan perintah "docker push 'gcr.io/$PROJECT_ID/tcc-be'"
